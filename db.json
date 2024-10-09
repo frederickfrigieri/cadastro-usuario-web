@@ -1,0 +1,17 @@
+{
+  "customers": [
+    {
+      "id": "83e0",
+      "nomeCompleto": "Frederick",
+      "email": "freddev1982@gmail.com",
+      "senha": "123456"
+    },
+    {
+      "id": "e879",
+      "nomeCompleto": "frederick frigieri",
+      "email": "frederick.frigieri@gmail.com",
+      "senha": "123456"
+    }
+  ],
+  "empresas": []
+}

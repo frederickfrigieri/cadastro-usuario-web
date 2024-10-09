@@ -1,0 +1,5 @@
+<app-box-container titulo="Meus Dados" *ngIf="usuarioLogado != null">
+    <app-box-detail label="Identificador" valor={{usuarioLogado.chaveUsuario}} />
+    <app-box-detail label="Nome" valor={{usuarioLogado.nomeCompleto}} />
+    <app-box-detail label="Email" valor={{usuarioLogado.email}} />
+</app-box-container>

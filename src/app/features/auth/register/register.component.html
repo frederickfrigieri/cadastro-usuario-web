@@ -1,0 +1,42 @@
+<h1 class="font-bold text-2xl text-start mb-3">Registrar Novo</h1>
+<form class="bg-slate-200 py-3 px-3 rounded border-2 mb-4 min-w-[400px]" [formGroup]="form" (ngSubmit)="registrar()">
+
+    <div class="flex flex-col gap-1 mb-2">
+        <label class="font-medium text-1xl" for="email">Email</label>
+        <input class="w-full border-2 rounded-md h-11 px-2" type="email" id="email" name="email"
+            placeholder="Digite seu email..." formControlName="email" />
+        <p *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="text-red-500 px-2">Email inválido</p>
+    </div>
+
+    <div class="flex flex-col gap-1 mb-2">
+        <label class="font-medium text-1xl" for="nomeCompleto">Nome Completo</label>
+        <input class="w-full border-2 rounded-md h-11 px-2" type="text" id="nomeCompleto" name="nomeCompleto"
+            placeholder="Digite seu nome completo..." formControlName="nomeCompleto" />
+        <p *ngIf="nomeCompleto?.invalid && (nomeCompleto?.dirty || nomeCompleto?.touched)" class="text-red-500 px-2">
+            Nome completo é obrigatório</p>
+    </div>
+
+    <div class="flex flex-col gap-1 mb-2">
+        <label class="font-medium text-1xl" for="nomeCompleto">Senha</label>
+        <input class="w-full border-2 rounded-md h-11 px-2" type="password" id="senha" name="senha"
+            placeholder="Digite sua senha..." formControlName="senha" />
+        <p *ngIf="senha?.invalid && (senha?.dirty || senha?.touched)" class="text-red-500 px-2">Senha
+            é obrigatório com mín 4 caracteres.</p>
+    </div>
+
+    <div class="flex flex-col gap-1 mb-2">
+        <label class="font-medium text-1xl" for="nomeCompleto">Confirme a Senha</label>
+        <input class="w-full border-2 rounded-md h-11 px-2" type="password" id="confirmeSenha" name="confirmeSenha"
+            placeholder="Confirme sua senha..." formControlName="confirmeSenha" />
+        <p *ngIf="confirmeSenha?.invalid && (confirmeSenha?.dirty || confirmeSenha?.touched)" class="text-red-500 px-2">
+            Senha inválida.</p>
+    </div>
+
+    <button [disabled]="form.invalid" type="submit"
+        class="bg-blue-500 my-4 px-2 h-11 rounded text-white font-bold disabled:cursor-not-allowed disabled:bg-gray-400">Criar Conta</button>
+</form>
+
+<span>
+    Já tem uma conta? <a class="font-medium text-[#3b82f6] cursor-pointer" routerLink="/auth/login">Clique aqui para
+        logar</a>
+</span>

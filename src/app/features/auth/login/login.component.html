@@ -1,0 +1,33 @@
+<h1 class="font-bold text-2xl text-start mb-3">Login</h1>
+<form class="bg-slate-200 w-[500px] py-3 px-3 rounded border-2 mb-4" [formGroup]="form" (ngSubmit)="logar()">
+
+    <div class="flex flex-col gap-1 mb-2">
+        <label class="font-medium text-1xl" for="email">Email</label>
+        <input class="w-full border-2 rounded-md h-11 px-2" type="email" id="email" name="email"
+            placeholder="Digite seu email..." formControlName="email" />
+        <p *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="text-red-500 px-2">Email inválido</p>
+    </div>
+
+    <div class="flex flex-col gap-1 mb-2">
+        <label class="font-medium text-1xl" for="senha">Senha</label>
+        <input class="w-full border-2 rounded-md h-11 px-2" type="password" id="senha" name="senha"
+            placeholder="Digite sua senha..." formControlName="senha" />
+        <p *ngIf="senha?.invalid && (senha?.dirty || senha?.touched)" class="text-red-500 px-2">Informe o
+            password</p>
+    </div>
+
+    <button type="submit" [disabled]="!form.valid"
+        class="bg-blue-500 my-2 px-2 h-11 rounded text-white font-bold disabled:cursor-not-allowed disabled:bg-gray-400">Entrar</button>
+
+    <p *ngIf="logarResponse?.success == true && logarResponse?.usuario == null" class="text-red-500">Usuário não
+        encontrado</p>
+
+    <p *ngIf="logarResponse?.success == false" class="text-red-500">Ops, aconteceu algo inesperado, olhe se a api está
+        funcionando!</p>
+</form>
+
+<span>
+    <a class="font-medium text-[#3b82f6] cursor-pointer text-wrap" (click)="registrar()">Clique aqui </a> para criar uma
+    nova
+    conta
+</span>

@@ -1,0 +1,64 @@
+<h1 class="font-bold text-2xl text-start mb-3">Registrar Empresa</h1>
+
+<form class="bg-slate-200 py-3 px-3 rounded border-2 mb-4 min-w-[400px]" [formGroup]="form" (ngSubmit)="registrar()">
+
+    <div class="flex flex-col gap-1 mb-2">
+        <label class="font-medium text-1xl" for="email">Razao Social</label>
+        <input class="w-full border-2 rounded-md h-11 px-2" type="text" placeholder="Digite a razao social..."
+            formControlName="razaoSocial" />
+        <p *ngIf="razaoSocial?.invalid && (razaoSocial?.dirty || razaoSocial?.touched)" class="text-red-500 px-2">Razao
+            Social é obrigatório</p>
+    </div>
+
+    <div class="flex flex-col gap-1 mb-2">
+        <label class="font-medium text-1xl" for="email">CNPJ</label>
+        <input class="w-full border-2 rounded-md h-11 px-2" type="text" placeholder="Digite o cnpj..."
+            formControlName="cnpj" mask="000.000.000-99" showMaskTyped="true" />
+        <p *ngIf="cnpj?.invalid && (cnpj?.dirty || cnpj?.touched)" class="text-red-500 px-2">CNPJ é
+            obrigatório</p>
+    </div>
+
+    <div class="flex flex-col gap-1 mb-2">
+        <label class="font-medium text-1xl" for="email">Responsável</label>
+        <input class="w-full border-2 rounded-md h-11 px-2" type="text" placeholder="Digite o responsavel..."
+            formControlName="responsavel" />
+        <p *ngIf="responsavel?.invalid && (responsavel?.dirty || responsavel?.touched)" class="text-red-500 px-2">
+            Responsável é obrigatório</p>
+    </div>
+
+    <div class="flex flex-col gap-1 mb-2">
+        <label class="font-medium text-1xl" for="cep">Cep</label>
+        <input class="w-full border-2 rounded-md h-11 px-2" type="text" placeholder="Digite o cep..."
+            formControlName="cep" />
+        <p *ngIf="cep?.invalid && (cep?.dirty || cep?.touched)" class="text-red-500 px-2">
+            Cep é obrigatório</p>
+    </div>
+
+    <div class="flex flex-col gap-1 mb-2">
+        <label class="font-medium text-1xl" for="cidade">Cidade</label>
+        <input class="w-full border-2 rounded-md h-11 px-2" type="text" placeholder="Digite o cep..."
+            formControlName="cidade" />
+        <p *ngIf="cidade?.invalid && (cidade?.dirty || cidade?.touched)" class="text-red-500 px-2">
+            Cidade é obrigatório</p>
+    </div>
+
+    <div class="flex flex-col gap-1 mb-2">
+        <label class="font-medium text-1xl" for="estado">Estado</label>
+        <input class="w-full border-2 rounded-md h-11 px-2" type="text" placeholder="Digite o estado..."
+            formControlName="estado" />
+        <p *ngIf="estado?.invalid && (estado?.dirty || estado?.touched)" class="text-red-500 px-2">
+            Estado é obrigatório</p>
+    </div>
+
+    <div class="flex flex-col gap-1 mb-2">
+        <label class="font-medium text-1xl" for="endereco">Endereço</label>
+        <input class="w-full border-2 rounded-md h-11 px-2" type="text" placeholder="Digite o endereco..."
+            formControlName="endereco" />
+        <p *ngIf="endereco?.invalid && (endereco?.dirty || endereco?.touched)" class="text-red-500 px-2">
+            Endereço é obrigatório</p>
+    </div>
+
+    <button [disabled]="form.invalid" type="submit"
+        class="bg-blue-500 my-4 px-2 h-11 rounded text-white font-bold disabled:cursor-not-allowed disabled:bg-gray-400">Criar
+        Empresa</button>
+</form>

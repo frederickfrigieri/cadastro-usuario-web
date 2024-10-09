@@ -1,0 +1,12 @@
+<app-box-container titulo="Minha Empresa" *ngIf="empresa != null">
+    <app-box-detail label="Razao Social" valor={{empresa.razaoSocial}} />
+    <app-box-detail label="CNPJ" valor={{empresa.cnpj}} />
+    <app-box-detail label="Responsavel" valor={{empresa.responsavel}} />
+    <app-box-detail label="CEP" valor={{empresa.cep}} />
+    <app-box-detail label="Cidade" valor={{empresa.cidade}} />
+    <app-box-detail label="Estado" valor={{empresa.estado}} />
+    <app-box-detail label="Endereco" valor={{empresa.endereco}} />
+</app-box-container>
+
+<p *ngIf="empresa == null" class="font-semibold">Voce nao possui nenhum empresa configurada, <a class="text-[blue]"
+        routerLink="registrar">clique aqui</a> e comece agora</p>
